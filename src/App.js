@@ -2,7 +2,7 @@
 import Navbar from './Navbar'
 import Acceuil from './Acceuil'
 import Activite from './Activite'
-import Ajouter from './Ajouter'
+import Ajouter from './Create'
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import Blog from './Blog'
 import FAQ from './FAQ'
@@ -25,7 +25,7 @@ function App() {
           <Route exact path = "/Activite">
               <Activite />
           </Route>
-          <Route exact path = "/Ajouter">
+          <Route exact path = "/Create">
             <Ajouter />
           </Route>
           <Route exact path = "/FAQ">

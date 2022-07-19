@@ -39,7 +39,7 @@ const Acceuil = () => {
                                     <p style={{padding: '7px'}}>Notre numéro de téléphone: (613) 987-7659</p>
                                     <p style={{padding: '7px'}}>Notre addresse couriel: </p>
                                     <a style= {{color: 'blue', padding: '7px'}} href="www.gmail.com">info@communactive.ca</a>
-                                    <p style={{padding: '7px'}}>Notre addresse: 1231 Rue Principale, ON, K0A3C0</p>
+                                    <p style={{padding: '7px'}}>Notre addresse: 1231 Rue Principale, St-Albert ON, K0A3C0</p>
                                     <h3 style={{padding: '7px'}}> Heure d'ouverture</h3>
                                     <Table bordered hover>
                                         <tbody>

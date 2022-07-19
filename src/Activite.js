@@ -2,24 +2,31 @@ import background from './img/background.png'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Container, Row, Col } from 'react-grid-system';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ActiList from './ActiList';
 
 
 const Activité = () => {
-    const [acti, setActi] = useState([
-        { titre: 'Soirée cinéma', date: '2022-10-24', heure: '18h', description: 'lorem ipsum', id: 1 },
-        { titre: 'Match de soccer', date: '2022-09-06', heure: '16h', description: 'lorem ipsum', id: 2 },
-        { titre: 'Promenade de vélo', date: '2022-10-29', heure: '19h', description: 'lorem ipsum', id: 3 },
-        { titre: 'Jeux gonflable', date: '2022-11-07', heure: '11:30', description: 'lorem ipsum', id: 4 }
-    ]);
+    const [acti, setActi] = useState(null);
 
     const handleDelete = (id) => {
         const newacti = acti.filter(act => act.id !== id)
         setActi(newacti)
 
     }
-    return (  
+
+    useEffect(() => {
+        fetch('http://localhost:8000/acti')
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                setActi(data);
+            })
+
+    }, []);
+    return (
+         
         <div style={{
             backgroundImage: "url(" + background + ")",
             backgroundPosition: '0px 0px',
@@ -39,7 +46,7 @@ const Activité = () => {
                                   <Card.Text>
                                       <h1>Activité à venir</h1>
                                       <hr/>
-                                      <ActiList acti={acti} handleDelete={handleDelete} />
+                                      {acti && <ActiList acti={acti} handleDelete={handleDelete} />}
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

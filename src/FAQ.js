@@ -3,10 +3,11 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Container, Row, Col } from 'react-grid-system';
 import { Grid } from "@material-ui/core";
+import Navbar from './Navbar';
 
 
 const FAQ = () => {
-    return ( 
+    return (
         <div style={{
             backgroundImage: "url(" + background + ")",
             backgroundPosition: '0px 0px',
@@ -41,7 +42,6 @@ const FAQ = () => {
                         </Col>
                     </Row>
                 </Container>
-              <h1>FAQ</h1>
          </div> 
         
     );
