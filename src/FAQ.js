@@ -22,6 +22,7 @@ const FAQ = () => {
 
                       </Col>
                       <Col sm={5}>
+                      <br/><br/>
                           <Card style={{ width: '30rem', backgroundColor: 'orange', padding: '10px' }} className='addcard'>
                               <Card.Body>
                                   <Card.Text>

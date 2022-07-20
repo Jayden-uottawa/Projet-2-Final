@@ -4,9 +4,11 @@ import Button from 'react-bootstrap/Button'
 import { Container, Row, Col } from 'react-grid-system';
 import { useEffect, useState } from 'react'
 import ActiList from './ActiList';
+import Navbar from './Navbar'
 
 
 const Activité = () => {
+    <Navbar />
     const [acti, setActi] = useState(null);
 
     const handleDelete = (id) => {
@@ -26,14 +28,17 @@ const Activité = () => {
 
     }, []);
     return (
+        
          
         <div style={{
-            backgroundImage: "url(" + background + ")",
+            background: "linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url(" + background + ")",
+            //backgroundImage: "url(" + background + ")",
             backgroundPosition: '0px 0px',
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             width: "100vw",
             height: "100vh",
+            //backgroundColor: "green",   
           }}>
               <Container>
                   <Row>
@@ -41,7 +46,8 @@ const Activité = () => {
 
                       </Col>
                       <Col sm={5}>
-                          <Card style={{ width: '30rem', backgroundColor: 'orange', padding: '10px' }} className='addcard'>
+                          <br/><br/>
+                          <Card style={{ width: '35rem', backgroundColor: 'orange', padding: '10px' }} className='addcard'>
                               <Card.Body>
                                   <Card.Text>
                                       <h1>Activité à venir</h1>

@@ -1,0 +1,4 @@
+Comment faire fonctionner mon application:
+ 1. Run npm start
+ 2. Seperate terminal run npx json-server --watch data/db.json --port 8000
+ 3. Aller au localhost donner lorsque vous avex run (npm start)

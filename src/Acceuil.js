@@ -23,6 +23,7 @@ const Acceuil = () => {
             backgroundRepeat: "no-repeat",
             width: "100vw",
             height: "100vh",
+            backgroundColor: 'green'
           }}>
               <Container>
                   <Row>
@@ -31,15 +32,16 @@ const Acceuil = () => {
 
                       </Col>
                       <Col sm={5}>
-                          <Card style={{ width: '30rem', backgroundColor: 'orange', padding:'10px'}} className='addcard'>
+                      <br/><br/>
+                          <Card style={{ width: '35rem', backgroundColor: 'orange', padding:'10px'}} className='addcard'>
                               <Card.Body>
-                                  <Card.Title>Binvenue a notre organisme a but non lucratif!</Card.Title>
                                   <Card.Text>
+                                      <h2>Binvenue à notre organisme à but non lucratif!</h2>
                                     <h3 class="lead" style={{padding: '7px'}}>Comment nous joindre:</h3>
-                                    <p style={{padding: '7px'}}>Notre numéro de téléphone: (613) 987-7659</p>
-                                    <p style={{padding: '7px'}}>Notre addresse couriel: </p>
+                                    <p style={{padding: '7px'}}>Numéro de téléphone: (613) 987-7659</p>
+                                    <p style={{padding: '7px'}}>Addresse couriel: </p>
                                     <a style= {{color: 'blue', padding: '7px'}} href="www.gmail.com">info@communactive.ca</a>
-                                    <p style={{padding: '7px'}}>Notre addresse: 1231 Rue Principale, St-Albert ON, K0A3C0</p>
+                                    <p style={{padding: '7px'}}>Addresse: 1231 Rue Principale, St-Albert ON, K0A3C0</p>
                                     <h3 style={{padding: '7px'}}> Heure d'ouverture</h3>
                                     <Table bordered hover>
                                         <tbody>
