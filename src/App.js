@@ -10,7 +10,6 @@ import Apropos from './Apropos'
 import FAQ_E from './FAQ_E'
 
 function App() {
-  const title = "Welcome to the new blog"
   return (
     <Router>
     <div className="App">

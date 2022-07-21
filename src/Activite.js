@@ -1,6 +1,5 @@
 import background from './img/background.png'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 import { Container, Row, Col } from 'react-grid-system';
 import { useEffect, useState } from 'react'
 import ActiList from './ActiList';
@@ -31,14 +30,13 @@ const Activité = () => {
         
          
         <div style={{
-            background: "linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url(" + background + ")",
-            //backgroundImage: "url(" + background + ")",
+            backgroundImage: "url(" + background + ")",
             backgroundPosition: '0px 0px',
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             width: "100vw",
             height: "100vh",
-            //backgroundColor: "green",   
+              
           }}>
               <Container>
                   <Row>
@@ -50,7 +48,7 @@ const Activité = () => {
                           <Card style={{ width: '35rem', backgroundColor: 'orange', padding: '10px' }} className='addcard'>
                               <Card.Body>
                                   <Card.Text>
-                                      <h1>Activité à venir</h1>
+                                      <h2 style={{padding: '7px'}}>Activité à venir</h2>
                                       <hr/>
                                       {acti && <ActiList acti={acti} handleDelete={handleDelete} />}
                                     </Card.Text>

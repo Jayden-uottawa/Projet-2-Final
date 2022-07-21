@@ -1,6 +1,5 @@
 import background from './img/background.png'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 import { Container, Row, Col } from 'react-grid-system';
 import YoutubeEmbed from './YoutubeEmbed';
 
@@ -22,6 +21,7 @@ const Apropos = () => {
 
                       </Col>
                       <Col sm={5}>
+                          <br/><br/>
                           <Card style={{ width: '600px', backgroundColor: 'orange' }} className='addcard'>
                               <Card.Body>
                                   
@@ -30,7 +30,8 @@ const Apropos = () => {
                                       <YoutubeEmbed embedId="KPFC0KcuUtQ"/>
                                       <h2 style = {{ padding: '10px'}}>Notre histoire:</h2>
                                       <p style = {{ padding: '10px'}} >
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim erat cursus ullamcorper pellentesque. Curabitur iaculis ligula ipsum, id consectetur libero semper at. Morbi sollicitudin tellus et velit rhoncus egestas. Aliquam hendrerit congue velit, ut condimentum dui suscipit sed. Fusce augue diam, pharetra tincidunt lectus at, hendrerit cursus elit. Etiam sollicitudin auctor rutrum. Nam et gravida ante. Donec a sagittis leo. In sagittis urna mollis velit cursus tempor. Phasellus id augue ac nisi maximus placerat a nec sem. In mauris est, aliquam eget porta et, maximus vitae risus. Pellentesque vitae diam velit. Donec finibus enim id pellentesque vulputate.
+                                        Communactive à été fondé en 2010 par un groupes d'adolesent qui voulais faire une différence dans leur communauté. La prmière activité qui a été organiser par le groupes était une soirée cinéma au centre commuanutaire et l'activité a été un grand succèes. Depuis ce jours, plusieurs personne ce sont joint au mouvement et organise leurs propre activité pour la communauté. Nous tennons a remercier nos nombreux commanditaire qui rendre chaque activité possible. Sans leurs support on ne pourrait pas offrir toutes ses belles activité pour la population de St-albert. 
+                                      
                                       </p>
                                     </Card.Text>
                                 </Card.Body>

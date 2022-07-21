@@ -1,14 +1,14 @@
 import background from './img/background.png'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 import { Container, Row, Col } from 'react-grid-system';
-import DatePicker from 'react-datepicker';
 import { useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 
 
 
 const Ajouter = () => {
+    const history = useHistory();
     const [titre, setTitre] = useState('')
     const [heure, setHeure] = useState('')
     const [date, setDate] = useState('')
@@ -24,7 +24,11 @@ const Ajouter = () => {
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(acti)
         }).then(() =>{
-            console.log('new acti added')
+            history.push('/Activite');
+        }).then(() =>{
+            alert('Votre activité  a été ajouter!')
+        }).then(() => {
+            window.location.reload()
         })
             
 
@@ -47,35 +51,39 @@ const Ajouter = () => {
                       </Col>
                       <Col sm={5}>
                       <br/><br/>
-                          <Card style={{ width: '30rem', backgroundColor: 'orange' }} className='addcard'>
+                          <Card style={{ width: '35rem', backgroundColor: 'orange' }} className='addcard'>
                               <Card.Body>
                                   <Card.Text>
-                                      <h2>Ajouter une activité</h2>
+                                      <h2 style={{padding: '15px'}}>Ajouter une activité</h2>
                                       <form onSubmit={handleSubmit}>
-                                          <label> Titre de l'activité:</label>
+                                          <label style={{padding: '15px' , fontSize: '15px', fontWeight:'bold'}}> Titre de l'activité:</label>
                                           <input 
                                           type="text"
                                           required
                                           value = {titre}
                                           onChange={(e) => setTitre(e.target.value)}
+                                          style={{padding: '5px'}}
                                           />
                                           <br/><br/>
-                                          <label> Heure de l'activité: </label>
+                                          <label style={{padding: '15px' , fontSize: '15px', fontWeight:'bold'}}> Heure de l'activité: </label>
                                           <input 
                                           type="text"
                                           required
                                           value = { heure }
                                           onChange={(e) => setHeure(e.target.value)}
+                                          style={{padding: '5px'}}
                                           />
                                           <br/><br/>
-                                          <label> Description de l'activité: </label>
-                                          <textarea 
+                                          <label style={{padding: '15px', fontSize: '15px', fontWeight:'bold'}}>Description de l'activité:</label>
+                                          <input 
+                                          type="text"
                                           required
                                           value = { description }
                                           onChange={(e) => setDescription(e.target.value)}
-                                          ></textarea>
+                                          style={{padding: '5px'}}
+                                          />
                                           <br/><br/>
-                                          <label> Date de l'activité(yyyy/mm/dd): </label>
+                                          <label style={{padding: '15px' , fontSize: '15px', fontWeight:'bold'}}> Date de l'activité: </label>
                                           <input 
                                           type="date"
                                           min="2022-06-09"
@@ -83,13 +91,14 @@ const Ajouter = () => {
                                           required
                                           value = { date }
                                           onChange={(e) => setDate(e.target.value)}
+                                          style={{padding: '5px'}}
                                           />
                                           <br/><br/>
-                                          <button >Ajouter l'activité</button>
-
-                                          
-                                          
-                                          
+                                          <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+                                          <button style={{padding: '5px'}} >Ajouter l'activité</button>
+                                          <br/>
+                                          </div>
+                                          <br/>  
                                       </form>
                                     </Card.Text>
                                     

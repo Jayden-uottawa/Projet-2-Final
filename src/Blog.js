@@ -1,12 +1,13 @@
 import background from './img/background.png'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 import { Container, Row, Col } from 'react-grid-system';
 import ForumList from './ForumList';
 import { useEffect, useState } from 'react'
+import { useHistory } from "react-router-dom";
 
 
 const Blog = () => {
+    const history = useHistory();
     const [forum, setForum] = useState(null);
 
     const handleDelete = (id) => {
@@ -28,6 +29,12 @@ const Blog = () => {
             body: JSON.stringify(forum)
         }).then(() =>{
             console.log('new acti added')
+        }).then(() =>{
+            history.push('/Blog');
+        }).then(() =>{
+            alert('Votre message a été publier')
+        }).then(() => {
+            window.location.reload()
         })
             
 
@@ -59,28 +66,36 @@ const Blog = () => {
                       </Col>
                       <Col sm={5}>
                       <br/><br/>
-                          <Card style={{ width: '30rem', backgroundColor: 'orange' }} className='addcard'>
+                          <Card style={{ width: '35rem', backgroundColor: 'orange' }} className='addcard'>
                               <Card.Body>
                                   <Card.Text>
-                                      <h2>Forum de discussion</h2>
+                                      <h2 style={{padding: '7px'}}>Forum de discussion</h2>
                                       {forum && <ForumList forum={forum} handleDelete={handleDelete} />}
                                       <form onSubmit={handleSubmit}>
-                                          <label> Entrez votre nom:</label>
+                                          <label style={{padding: "7px"}}> Entrez votre nom:</label>
                                           <input 
                                           type="text"
                                           required
                                           value = {auteur}
-                                          onChange={(e) => setAuteur(e.target.value)}
+                                          onChange={(e) => setAuteur(e.target.value)}           
                                           />
                                           <br/><br/>
-                                          <label> Entrez votre message: </label>
+                                          <label style = {{padding: "7px"}}>Entrez votre message:</label>
+                                          <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                                           <textarea 
                                           required
                                           value = { message }
+                                          cols="75"
+                                          rows="3"
                                           onChange={(e) => setMessage(e.target.value)}
                                           ></textarea>
-                                          <br/><br/>
+                                          </div>
+                                          <br/>
+                                          <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                                           <button>Publier votre message</button>
+                                          </div>
+                                          <br/>
+                                          
 
                                           
                                           
